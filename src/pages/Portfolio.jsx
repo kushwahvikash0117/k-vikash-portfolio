@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, Globe, Shield, Terminal, Cpu, Code2, Lock, Search, FileCode } from 'lucide-react';
+// 1. Named imports ki jagah Namespace import use karo
+import * as Lucide from 'lucide-react';
 
 const Portfolio = ({ theme }) => {
   const isCyber = theme === 'cyber';
@@ -9,40 +10,49 @@ const Portfolio = ({ theme }) => {
   const cardBg = isCyber ? 'bg-black/60' : 'bg-white';
   const borderColor = isCyber ? 'border-[#00ff41]/20' : 'border-gray-100';
 
-  // COMPLETE PROJECTS DATA
+  // 2. Icons ko safely fetch karne ke liye helper
+  // Agar koi icon (jaise Github) missing hua toh 'Globe' ya 'Code' dikhayega
+  const getIcon = (name) => {
+    const Icon = Lucide[name] || Lucide.Globe || Lucide.Code2;
+    return <Icon size={24} />;
+  };
+
   const projects = {
     dev: [
-      { title: "Campus Bites", desc: "Food pre-ordering app for NITJ students to reduce canteen wait times.", tags: ["React", "Node.js", "MongoDB"], icon: <Globe /> },
-      { title: "ChatSorter", desc: "Smart chat filtering system that organizes messages based on priority.", tags: ["Python", "Socket.io"], icon: <Code2 /> },
-      { title: "ReWear", desc: "Community platform for clothing exchange and sustainable fashion.", tags: ["MERN Stack", "Tailwind"], icon: <Globe /> },
-      { title: "DonorConnect", desc: "Critical platform connecting organ donors with recipients in real-time.", tags: ["React", "Firebase"], icon: <Shield /> },
-      { title: "Blood Donation App", desc: "MERN-based system for blood requests and donor tracking at NITJ.", tags: ["MongoDB", "Express"], icon: <Code2 /> },
-      { title: "Personal Portfolio", desc: "Dual-mode interactive website showcasing diverse technical skills.", tags: ["React", "Framer Motion"], icon: <Cpu /> },
-      { title: "Hostel Event Manager", desc: "Centralized system for managing hostel activities and announcements.", tags: ["PHP", "MySQL"], icon: <Code2 /> },
-      { title: "Notes Sharing Portal", desc: "P2P portal where students can upload and download academic notes.", tags: ["MERN", "PDF.js"], icon: <FileCode /> },
-      { title: "Online Quiz System", desc: "Scalable platform for hosting MCQ exams with automated grading.", tags: ["React", "Node.js"], icon: <Code2 /> },
-      { title: "Auth To-Do App", desc: "Task manager with JWT-based authentication and persistent storage.", tags: ["React", "JWT"], icon: <Lock /> }
+      { title: "Campus Bites", desc: "Food pre-ordering app for NITJ students to reduce canteen wait times.", tags: ["React", "Node.js", "MongoDB"], iconName: "Globe" },
+      { title: "ChatSorter", desc: "Smart chat filtering system that organizes messages based on priority.", tags: ["Python", "Socket.io"], iconName: "Code2" },
+      { title: "ReWear", desc: "Community platform for clothing exchange and sustainable fashion.", tags: ["MERN Stack", "Tailwind"], iconName: "Globe" },
+      { title: "DonorConnect", desc: "Critical platform connecting organ donors with recipients in real-time.", tags: ["React", "Firebase"], iconName: "Shield" },
+      { title: "Blood Donation App", desc: "MERN-based system for blood requests and donor tracking at NITJ.", tags: ["MongoDB", "Express"], iconName: "Code2" },
+      { title: "Personal Portfolio", desc: "Dual-mode interactive website showcasing diverse technical skills.", tags: ["React", "Framer Motion"], iconName: "Cpu" },
+      { title: "Hostel Event Manager", desc: "Centralized system for managing hostel activities and announcements.", tags: ["PHP", "MySQL"], iconName: "Code2" },
+      { title: "Notes Sharing Portal", desc: "P2P portal where students can upload and download academic notes.", tags: ["MERN", "PDF.js"], iconName: "FileCode" },
+      { title: "Online Quiz System", desc: "Scalable platform for hosting MCQ exams with automated grading.", tags: ["React", "Node.js"], iconName: "Code2" },
+      { title: "Auth To-Do App", desc: "Task manager with JWT-based authentication and persistent storage.", tags: ["React", "JWT"], iconName: "Lock" }
     ],
     cyber: [
-      { title: "Attack Simulator", desc: "Simulates real-world cyber attacks (SQLi, XSS) to test resilience.", tags: ["Python", "Docker"], icon: <Shield /> },
-      { title: "Network Sniffer", desc: "Python tool inspired by Wireshark for real-time traffic analysis.", tags: ["Scapy", "Networking"], icon: <Terminal /> },
-      { title: "Port Scanner", desc: "Multi-threaded tool to identify open ports and service versions.", tags: ["C++", "Linux"], icon: <Search /> },
-      { title: "Password Analyzer", desc: "Evaluates entropy and checks against known breached databases.", tags: ["Python", "Hashing"], icon: <Lock /> },
-      { title: "Simple Keylogger", desc: "Educational tool demonstrating keystroke capture and logging.", tags: ["Python", "Hooks"], icon: <Terminal /> },
-      { title: "Integrity Checker", desc: "Uses SHA-256 hashing to monitor unauthorized file changes.", tags: ["Cryptography", "Python"], icon: <Shield /> },
-      { title: "CTF Practice Lab", desc: "Containerized vulnerable machines for penetration testing practice.", tags: ["Docker", "Kali"], icon: <Terminal /> },
-      { title: "Phishing Detector", desc: "ML-based analyzer checking URLs for suspicious patterns.", tags: ["Scikit-learn", "NLP"], icon: <Search /> },
-      { title: "Log Analyzer", desc: "Parses system logs to identify anomalies and potential breach attempts.", tags: ["Bash", "ELK Stack"], icon: <Terminal /> },
-      { title: "Vuln Scanner", desc: "Automated scanner for common web vulnerabilities (OWASP Top 10).", tags: ["Python", "Security"], icon: <Shield /> }
+      { title: "Attack Simulator", desc: "Simulates real-world cyber attacks (SQLi, XSS) to test resilience.", tags: ["Python", "Docker"], iconName: "Shield" },
+      { title: "Network Sniffer", desc: "Python tool inspired by Wireshark for real-time traffic analysis.", tags: ["Scapy", "Networking"], iconName: "Terminal" },
+      { title: "Port Scanner", desc: "Multi-threaded tool to identify open ports and service versions.", tags: ["C++", "Linux"], iconName: "Search" },
+      { title: "Password Analyzer", desc: "Evaluates entropy and checks against known breached databases.", tags: ["Python", "Hashing"], iconName: "Lock" },
+      { title: "Simple Keylogger", desc: "Educational tool demonstrating keystroke capture and logging.", tags: ["Python", "Hooks"], iconName: "Terminal" },
+      { title: "Integrity Checker", desc: "Uses SHA-256 hashing to monitor unauthorized file changes.", tags: ["Cryptography", "Python"], iconName: "Shield" },
+      { title: "CTF Practice Lab", desc: "Containerized vulnerable machines for penetration testing practice.", tags: ["Docker", "Kali"], iconName: "Terminal" },
+      { title: "Phishing Detector", desc: "ML-based analyzer checking URLs for suspicious patterns.", tags: ["Scikit-learn", "NLP"], iconName: "Search" },
+      { title: "Log Analyzer", desc: "Parses system logs to identify anomalies and potential breach attempts.", tags: ["Bash", "ELK Stack"], iconName: "Terminal" },
+      { title: "Vuln Scanner", desc: "Automated scanner for common web vulnerabilities (OWASP Top 10).", tags: ["Python", "Security"], iconName: "Shield" }
     ]
   };
 
   const currentProjects = isCyber ? projects.cyber : projects.dev;
 
+  // 3. GitHub aur ExternalLink ko safely access karo
+  const Github = Lucide.Github || Lucide.GithubIcon || Lucide.Code2;
+  const ExternalLink = Lucide.ExternalLink || Lucide.Globe;
+
   return (
     <div className={`space-y-12 pb-20 px-4 md:px-0 transition-all duration-500 ${isCyber ? 'font-mono' : 'font-sans'}`}>
       
-      {/* HEADER SECTION */}
       <div className="pt-6 space-y-4 text-center md:text-left">
         <h1 className="text-4xl font-black relative inline-block">
           {isCyber ? '> LOAD_SEC_ASSETS' : 'Portfolio'}
@@ -55,7 +65,6 @@ const Portfolio = ({ theme }) => {
         </p>
       </div>
 
-      {/* PROJECTS GRID */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <AnimatePresence mode="wait">
           {currentProjects.map((project, index) => (
@@ -70,10 +79,9 @@ const Portfolio = ({ theme }) => {
                 ${cardBg} ${borderColor}
                 ${isCyber ? 'hover:shadow-[0_0_30px_rgba(0,255,65,0.25)]' : 'shadow-xl shadow-slate-200/50 hover:shadow-2xl'}`}
             >
-              {/* Project Icon & Actions */}
               <div className="flex justify-between items-start mb-8">
                 <div className={`p-4 rounded-2xl ${isCyber ? 'bg-[#00ff41]/10 text-[#00ff41]' : 'bg-blue-50 text-blue-600'}`}>
-                  {React.cloneElement(project.icon, { size: 24 })}
+                  {getIcon(project.iconName)}
                 </div>
                 <div className="flex gap-2">
                   <a href="#" className="p-2 opacity-40 hover:opacity-100 transition-opacity">
@@ -85,8 +93,7 @@ const Portfolio = ({ theme }) => {
                 </div>
               </div>
 
-              {/* Text Content */}
-              <div className="space-y-4">
+              <div className="space-y-4 text-left">
                 <h3 className="text-2xl font-black tracking-tight">
                   {isCyber ? `_ ${project.title}` : project.title}
                 </h3>
@@ -94,7 +101,6 @@ const Portfolio = ({ theme }) => {
                   {project.desc}
                 </p>
 
-                {/* Tech Tags */}
                 <div className="flex flex-wrap gap-2 pt-4">
                   {project.tags.map(tag => (
                     <span 
@@ -110,7 +116,6 @@ const Portfolio = ({ theme }) => {
                 </div>
               </div>
 
-              {/* Cyber Mode Decorative Text */}
               {isCyber && (
                 <div className="absolute bottom-4 right-6 text-[8px] opacity-10 select-none pointer-events-none uppercase">
                   Classified // Auth_Pass
