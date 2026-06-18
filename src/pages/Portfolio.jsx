@@ -19,29 +19,105 @@ const Portfolio = ({ theme }) => {
 
   const projects = {
     dev: [
-      { title: "Campus Bites", desc: "Food pre-ordering app for NITJ students to reduce canteen wait times.", tags: ["React", "Node.js", "MongoDB"], iconName: "Globe" },
-      { title: "ChatSorter", desc: "Smart chat filtering system that organizes messages based on priority.", tags: ["Python", "Socket.io"], iconName: "Code2" },
-      { title: "ReWear", desc: "Community platform for clothing exchange and sustainable fashion.", tags: ["MERN Stack", "Tailwind"], iconName: "Globe" },
-      { title: "DonorConnect", desc: "Critical platform connecting organ donors with recipients in real-time.", tags: ["React", "Firebase"], iconName: "Shield" },
-      { title: "Blood Donation App", desc: "MERN-based system for blood requests and donor tracking at NITJ.", tags: ["MongoDB", "Express"], iconName: "Code2" },
-      { title: "Personal Portfolio", desc: "Dual-mode interactive website showcasing diverse technical skills.", tags: ["React", "Framer Motion"], iconName: "Cpu" },
-      { title: "Hostel Event Manager", desc: "Centralized system for managing hostel activities and announcements.", tags: ["PHP", "MySQL"], iconName: "Code2" },
-      { title: "Notes Sharing Portal", desc: "P2P portal where students can upload and download academic notes.", tags: ["MERN", "PDF.js"], iconName: "FileCode" },
-      { title: "Online Quiz System", desc: "Scalable platform for hosting MCQ exams with automated grading.", tags: ["React", "Node.js"], iconName: "Code2" },
-      { title: "Auth To-Do App", desc: "Task manager with JWT-based authentication and persistent storage.", tags: ["React", "JWT"], iconName: "Lock" }
-    ],
-    cyber: [
-      { title: "Attack Simulator", desc: "Simulates real-world cyber attacks (SQLi, XSS) to test resilience.", tags: ["Python", "Docker"], iconName: "Shield" },
-      { title: "Network Sniffer", desc: "Python tool inspired by Wireshark for real-time traffic analysis.", tags: ["Scapy", "Networking"], iconName: "Terminal" },
-      { title: "Port Scanner", desc: "Multi-threaded tool to identify open ports and service versions.", tags: ["C++", "Linux"], iconName: "Search" },
-      { title: "Password Analyzer", desc: "Evaluates entropy and checks against known breached databases.", tags: ["Python", "Hashing"], iconName: "Lock" },
-      { title: "Simple Keylogger", desc: "Educational tool demonstrating keystroke capture and logging.", tags: ["Python", "Hooks"], iconName: "Terminal" },
-      { title: "Integrity Checker", desc: "Uses SHA-256 hashing to monitor unauthorized file changes.", tags: ["Cryptography", "Python"], iconName: "Shield" },
-      { title: "CTF Practice Lab", desc: "Containerized vulnerable machines for penetration testing practice.", tags: ["Docker", "Kali"], iconName: "Terminal" },
-      { title: "Phishing Detector", desc: "ML-based analyzer checking URLs for suspicious patterns.", tags: ["Scikit-learn", "NLP"], iconName: "Search" },
-      { title: "Log Analyzer", desc: "Parses system logs to identify anomalies and potential breach attempts.", tags: ["Bash", "ELK Stack"], iconName: "Terminal" },
-      { title: "Vuln Scanner", desc: "Automated scanner for common web vulnerabilities (OWASP Top 10).", tags: ["Python", "Security"], iconName: "Shield" }
-    ]
+  {
+    title: "BloodConnect",
+    desc: "A comprehensive blood donation platform that connects donors and recipients through real-time request management, donor registration, and emergency blood availability tracking.",
+    tags: ["MERN Stack", "MongoDB", "Tailwindcss"],
+    github: "https://github.com/kushwahvikash0117/BloodConnect",
+    iconName: "Heart"
+  },
+  {
+    title: "ReWear",
+    desc: "A community-driven clothing exchange platform that promotes sustainable fashion by enabling users to donate, exchange, and reuse apparel efficiently.",
+    tags: ["MERN Stack", "Tailwind CSS"],
+    github: "https://github.com/kushwahvikash0117/ReWear",
+    link: "https://rewear-alpha.vercel.app/",
+    iconName: "Globe"
+  },
+  {
+    title: "CareConnect",
+    desc: "A healthcare support platform designed to improve accessibility to medical assistance, healthcare resources, and community-driven support services.",
+    tags: ["React", "Node.js"],
+    github: "https://github.com/kushwahvikash0117/CareConnect",
+    iconName: "Shield"
+  },
+  {
+    title: "VidyAstra AI",
+    desc: "An AI-powered educational platform that enhances learning through intelligent assistance, personalized resources, content analysis, and productivity-focused tools.",
+    tags: ["AI", "React", "MongoDB"],
+    github: "https://github.com/VidyastraAI/VidyastraAI",
+    iconName: "Cpu"
+  },
+  {
+    title: "Cyber Security Club Website",
+    desc: "The official website of the Cyber Security Club, serving as a centralized hub for events, blogs, team management, announcements, and community engagement.",
+    tags: ["React", "Tailwind CSS"],
+    github: "https://github.com/cybersecurityclub-nitj/CSC_NITJ_Web",
+    link: "https://csc.nitj.ac.in/",
+    iconName: "Shield"
+  },
+  {
+    title: "Helpyuva Foundation",
+    desc: "An NGO website developed to showcase social initiatives, volunteer opportunities, impact stories, and community outreach programs through a modern digital platform.",
+    tags: ["React", "Tailwind CSS"],
+    github: "https://github.com/kushwahvikash0117/HelpyuvaClient",
+    link: "https://helpyuva-client-88fz.vercel.app/",
+    iconName: "Globe"
+  },
+  {
+    title: "Campus Bites",
+    desc: "A food pre-ordering platform for NIT Jalandhar that enables students to place orders in advance, reducing waiting times and improving canteen efficiency.",
+    tags: ["MERN Stack", "Node.js"],
+    github: "https://github.com/kushwahvikash0117/CampusBitesClient",
+    link: "https://campus-bites-lyart.vercel.app/",
+    iconName: "Globe"
+  }
+],
+
+cyber: [
+  {
+    title: "InfoTool",
+    desc: "A cybersecurity reconnaissance utility that automates the collection and analysis of publicly available information related to domains, networks, and digital assets.",
+    tags: ["Python", "OSINT"],
+    github: "https://github.com/kushwahvikash0117/CyberSecTools",
+    iconName: "Search"
+  },
+  {
+    title: "NP Scanner",
+    desc: "A network and port scanning solution designed to identify active hosts, open ports, and exposed services for security assessment and network visibility.",
+    tags: ["Python", "Networking"],
+    github: "https://github.com/kushwahvikash0117/CyberSecTools",
+    iconName: "Radar"
+  },
+  {
+    title: "Phishing Simulation",
+    desc: "A cybersecurity awareness project that demonstrates phishing attack techniques in a controlled environment to educate users about social engineering threats.",
+    tags: ["Cybersecurity", "Awareness"],
+    github: "https://github.com/kushwahvikash0117/CyberSecTools",
+    iconName: "MailWarning"
+  },
+  {
+    title: "Recon",
+    desc: "A reconnaissance framework that gathers publicly available intelligence from multiple sources to support security assessments and threat analysis activities.",
+    tags: ["OSINT", "Python"],
+    github: "https://github.com/kushwahvikash0117/CyberSecTools",
+    iconName: "Search"
+  },
+  {
+    title: "IoT Device Behavior Visualizer",
+    desc: "A machine learning-based system that analyzes and visualizes IoT device behavior to identify anomalies, patterns, and potential security risks.",
+    tags: ["Machine Learning", "Python"],
+    github: "https://github.com/kushwahvikash0117/IoT_Device_Behavior_Visualizer",
+    link: "https://iot-device-behavior-visualizer.streamlit.app/",
+    iconName: "Cpu"
+  },
+  {
+    title: "TriGuard Firewall",
+    desc: "A multi-layer firewall architecture focused on traffic monitoring, packet filtering, threat detection, and strengthening overall network security.",
+    tags: ["Python", "Cybersecurity"],
+    iconName: "Shield"
+  }
+]
   };
 
   const currentProjects = isCyber ? projects.cyber : projects.dev;
@@ -84,12 +160,15 @@ const Portfolio = ({ theme }) => {
                   {getIcon(project.iconName)}
                 </div>
                 <div className="flex gap-2">
-                  <a href="#" className="p-2 opacity-40 hover:opacity-100 transition-opacity">
+                  {project.github && (
+                  <a href={project.github} className="p-2 opacity-40 hover:opacity-100 transition-opacity">
                     <Github size={20} />
                   </a>
-                  <a href="#" className="p-2 opacity-40 hover:opacity-100 transition-opacity">
+                  )}
+                  {project.link && (<a href={project.link} className="p-2 opacity-40 hover:opacity-100 transition-opacity">
                     <ExternalLink size={20} />
                   </a>
+                  )}
                 </div>
               </div>
 

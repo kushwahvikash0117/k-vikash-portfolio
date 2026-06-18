@@ -33,7 +33,7 @@ export default function Sidebar({ data, theme }) {
         <h2 className="mt-6 text-2xl font-bold tracking-tight text-center">Vikash Kushwah</h2>
         <p className={`mt-3 text-xs font-semibold px-4 py-1.5 rounded-lg uppercase tracking-wider
           ${isCyber ? 'bg-[#00ff41]/20 text-[#00ff41]' : 'bg-blue-100 text-blue-700'}`}>
-          {isCyber ? 'Security Analyst' : 'Developer'}
+          {isCyber ? 'Security Enthusiast' : 'Developer'}
         </p>
       </div>
 

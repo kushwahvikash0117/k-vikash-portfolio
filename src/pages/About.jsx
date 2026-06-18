@@ -7,13 +7,13 @@ export default function About({ theme, data }) {
 
   // 1. Dynamic "What I'm doing" Section
   const services = isCyber ? [
-    { title: "Network Forensics", desc: "Analyzing traffic to trace security breaches.", icon: <Shield size={32} /> },
-    { title: "Malware Research", desc: "Decompiling binaries to identify malicious patterns.", icon: <Terminal size={32} /> },
-    { title: "SecOps", desc: "Hardening system infrastructure and environments.", icon: <Lock size={32} /> }
+    { title: "Network Forensics", desc: "Analyzing network traffic, investigating security incidents, and identifying suspicious activities to strengthen system security and improve threat detection capabilities.", icon: <Shield size={32} /> },
+    { title: "Malware Research", desc: "Studying malicious software, understanding attack techniques, and analyzing threat behavior to enhance defensive strategies and cybersecurity awareness.", icon: <Terminal size={32} /> },
+    { title: "SecOps", desc: "Implementing security best practices, hardening systems, monitoring threats, and maintaining secure infrastructure to ensure operational resilience.", icon: <Lock size={32} /> }
   ] : [
-    { title: "Web Development", desc: "Building responsive and functional websites at professional level.", icon: <Globe size={32} /> },
-    { title: "System Architecture", desc: "Designing robust and scalable frontend structures.", icon: <Layout size={32} /> },
-    { title: "API Integration", desc: "Seamlessly connecting services for fluid data exchange.", icon: <Code2 size={32} /> }
+    { title: "Web Development", desc: "Building scalable, responsive, and user-centric web applications using modern technologies while ensuring seamless user experiences, optimized performance, and clean code architecture.", icon: <Globe size={32} /> },
+    { title: "System Architecture", desc: "Designing robust and scalable system architectures that ensure maintainability, efficiency, security, and smooth integration between frontend, backend, and databases.", icon: <Layout size={32} /> },
+    { title: "API Integration", desc: "Developing and integrating secure, high-performance APIs to enable seamless communication between services, applications, and third-party platforms.", icon: <Code2 size={32} /> }
   ];
 
   // 2. Tech Stack Data
@@ -29,13 +29,15 @@ export default function About({ theme, data }) {
     Backend: [
       { name: 'Node.js', icon: 'nodedotjs' },
       { name: 'Express', icon: 'express' },
-      { name: 'MongoDB', icon: 'mongodb' },
-      { name: 'Next.js', icon: 'nextdotjs' }
+      { name: 'MongoDB', icon: 'mongodb' }
     ],
     Programming: [
+      { name: 'C', icon: 'c' },
       { name: 'C++', icon: 'cplusplus' },
+      { name: 'JavaScript', icon: 'javascript' },
       { name: 'Python', icon: 'python' },
-      { name: 'Java', icon: 'openjdk' }
+      { name: 'MySQL', icon: 'mysql' },
+      { name: 'Bash', icon: 'gnubash' }
     ]
   };
 
@@ -43,18 +45,22 @@ export default function About({ theme, data }) {
     Tools: [
       { name: 'Wireshark', icon: 'wireshark' },
       { name: 'Kali Linux', icon: 'kalilinux' },
-      { name: 'Metasploit', icon: 'metasploit' },
-      { name: 'Burp Suite', icon: 'burpsuite' }
+      { name: 'Git', icon: 'git' },
+      { name: 'Linux', icon: 'linux' }
     ],
-    Networking: [
-      { name: 'Cisco', icon: 'cisco' },
-      { name: 'Nmap', icon: 'nmap' },
-      { name: 'Cloudflare', icon: 'cloudflare' }
+    Interests: [
+      { name: 'Networking', icon: 'cisco' },
+      { name: 'CTF', icon: 'hackthebox' },
+      { name: 'OSINT', icon: 'google' },
+      { name: 'Web Security', icon: 'cloudflare' }
     ],
     Programming: [
+      { name: 'C', icon: 'c' },
+      { name: 'C++', icon: 'cplusplus' },
+      { name: 'JavaScript', icon: 'javascript' },
       { name: 'Python', icon: 'python' },
-      { name: 'Bash', icon: 'gnubash' },
-      { name: 'C', icon: 'c' }
+      { name: 'MySQL', icon: 'mysql' },
+      { name: 'Bash', icon: 'gnubash' }
     ]
   };
 
@@ -65,53 +71,34 @@ export default function About({ theme, data }) {
   const accentColor = isCyber ? 'text-[#00ff41]' : 'text-blue-500';
   const accentBg = isCyber ? 'bg-[#00ff41]' : 'bg-blue-600';
 
-  // --- NEW FIXED AVATAR (DiceBear Lorelei - Highly Stable) ---
-  // Seed uses your name to keep it unique.
-  const avatarUrl = `https://drive.google.com/file/d/1ByP8IMyCeYtGLL7-CcljN0ZuKboWJCTJ/view?usp=drivesdk`;
-
   return (
-    <div className="space-y-16 pb-10 px-4 md:px-0 transition-all duration-500">
+    <div className="w-full space-y-16 pb-10 transition-all duration-500">
       
-      {/* SECTION 1: REFERENCE STYLE INTRO */}
-      <section className="space-y-8 pt-6">
+      {/* SECTION 1: INTRO */}
+      <section className="w-full space-y-8 pt-6">
         <h1 className="text-4xl font-black relative inline-block">
           {isCyber ? '> WHO_AM_I' : 'About Me'}
           <div className={`h-1.5 w-12 mt-2 rounded-full ${accentBg}`}></div>
         </h1>
 
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
-          <div className="flex-1 space-y-4 text-center md:text-left">
-            <p className="text-xl font-bold opacity-80 mb-1">Hey</p>
-            <h2 className="text-5xl md:text-6xl font-black tracking-tighter">
-              I am {data.name || 'Vikash Kushwah'}
-            </h2>
-            <div className="flex items-center justify-center md:justify-start gap-3 text-2xl font-bold pt-1">
-              <span>I'm a </span>
-              <span className={`px-3 py-1 rounded-xl transition-all duration-300 font-extrabold ${isCyber ? 'bg-[#00ff41]/20 text-[#00ff41]' : 'bg-blue-50 text-blue-600'}`}>
-                {isCyber ? 'Security Analyst' : 'Developer'}
-              </span>
-            </div>
-            <p className="text-lg opacity-70 leading-relaxed max-w-2xl pt-5">
-              {isCyber ? data.about.cyber : data.about.dev}
-            </p>
+        <div className="flex flex-col space-y-6">
+          <p className="text-xl font-bold opacity-80">Hey</p>
+          <h2 className="text-5xl md:text-7xl font-black tracking-tighter">
+            I am {data.name || 'Vikash Kushwah'}
+          </h2>
+          <div className="flex items-center gap-3 text-2xl font-bold">
+            <span>I'm a </span>
+            <span className={`px-3 py-1 rounded-xl transition-all duration-300 font-extrabold ${isCyber ? 'bg-[#00ff41]/20 text-[#00ff41]' : 'bg-blue-50 text-blue-600'}`}>
+              {isCyber ? 'Security Enthusiast' : 'Developer'}
+            </span>
           </div>
-
-          {/* Avatar Container */}
-          <div className="flex-shrink-0">
-            {/* Added a box-shadow and border style closer to your reference image */}
-            <div className={`w-48 h-48 rounded-3xl overflow-hidden border-2 p-2 transition-all duration-500 
-              ${isCyber ? 'border-[#00ff41] shadow-[0_0_40px_rgba(0,255,65,0.4)] bg-neutral-900' : 'border-blue-500 shadow-2xl bg-white'}`}>
-              <img 
-                src={avatarUrl} 
-                alt="Avatar" 
-                className="w-full h-full object-contain" 
-              />
-            </div>
-          </div>
+          <p className="text-lg opacity-70 leading-relaxed max-w-5xl text-justify">
+            {isCyber ? data.about.cyber : data.about.dev}
+          </p>
         </div>
       </section>
 
-      {/* SECTION 2: WHAT I'M DOING (Cards) */}
+      {/* SECTION 2: WHAT I'M DOING */}
       <section className="space-y-8">
         <h2 className="text-2xl font-bold">{isCyber ? '> ACTIVE_MISSIONS' : "What I'm doing"}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -146,7 +133,7 @@ export default function About({ theme, data }) {
           ))}
         </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 text-center">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8">
           {currentStack[currentTab].map(tech => (
             <div key={tech.name} className="flex flex-col items-center gap-3 group">
               <div className={`w-20 h-20 p-4 rounded-2xl border flex items-center justify-center transition-all duration-300 group-hover:scale-110

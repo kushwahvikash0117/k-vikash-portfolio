@@ -12,28 +12,99 @@ const Achievements = ({ theme }) => {
 
   // 1. General Achievements (Always Visible)
   const generalAchievements = [
-    { title: "State Topper", desc: "Ranked #1 in Class 12 Board Exams across the state.", icon: <Trophy />, tag: "Topper", date: "2021" },
-    { title: "District Topper", desc: "Achieved top rank in Class 10 Board Exams in the district.", icon: <Star />, tag: "Topper", date: "2019" },
-    { title: "NIT Jalandhar", desc: "Currently pursuing B.Tech in CSE at a premier national institute.", icon: <GraduationCap />, tag: "Academic", date: "2022-Present" },
-    { title: "Academic Excellence", desc: "Maintained strong consistency and performance in all semesters.", icon: <Award />, tag: "Performance", date: "Ongoing" }
-  ];
+  {
+    title: "State Topper",
+    desc: "Secured the top rank in the state in Class 12 Board Examinations.",
+    icon: <Trophy />,
+    tag: "Academic",
+    date: "2024"
+  },
+  {
+    title: "District Topper",
+    desc: "Achieved the highest score in the district in Class 10 Board Examinations.",
+    icon: <Star />,
+    tag: "Academic",
+    date: "2022"
+  },
+  {
+    title: "JEE Advanced Qualified",
+    desc: "Successfully qualified JEE Advanced 2024 and secured admission to NIT Jalandhar.",
+    icon: <Target />,
+    tag: "National",
+    date: "2024"
+  },
+  {
+    title: "Internship Representative",
+    desc: "Representing the CSE-DSE 2028 batch for internship opportunities and coordination.",
+    icon: <BookOpen />,
+    tag: "Leadership",
+    date: "May 2026-Present"
+  },
+  {
+    title: "Founder & Head, CSC NITJ",
+    desc: "Founded and currently lead the Cyber Security Club at NIT Jalandhar.",
+    icon: <ShieldAlert />,
+    tag: "Leadership",
+    date: "Dec 2025-Present"
+  },
+  {
+    title: "Core Member, Rajbhasha Samiti",
+    desc: "Actively contributing to initiatives that promote the Hindi language, cultural heritage, and linguistic awareness within the institute community.",
+    icon: <Award />,
+    tag: "Leadership",
+    date: "Aug 2025-Present"
+  }
+];
 
   // 2. Full Stack Achievements (Dev Mode)
   const devAchievements = [
-    { title: "Campus Bites", desc: "Successfully deployed food pre-ordering system for NITJ campus.", icon: <Code2 />, tag: "Project", date: "2023" },
-    { title: "MERN Stack Mastery", desc: "Developed and managed multiple complex full stack projects.", icon: <Zap />, tag: "Dev", date: "2024" },
-    { title: "UI/UX Specialist", desc: "Designed highly responsive and user-friendly interfaces with React.", icon: <BookOpen />, tag: "Design", date: "2024" },
-    { title: "Backend Scalability", desc: "Created high-performance backend systems using Node.js & MongoDB.", icon: <Target />, tag: "Backend", date: "2023" }
-  ];
+  {
+    title: "AIR 95 - JavaScript Competition",
+    desc: "Secured AIR 95 in the All India JavaScript Competition organized by IIT (BHU) E-Cell.",
+    icon: <Code2 />,
+    tag: "Competition",
+    date: "2023"
+  },
+  {
+    title: "Odoo Hackathon Finalist",
+    desc: "Reached the finalist stage among 19,000+ participants and secured a place in the top 351 teams nationwide.",
+    icon: <Zap />,
+    tag: "Hackathon",
+    date: "2025"
+  },
+  {
+    title: "Lead Developer - VidyAstra AI",
+    desc: "Leading the development of VidyAstra AI, the institute's official AI-powered learning platform project.",
+    icon: <Zap />,
+    tag: "Development",
+    date: "2026"
+  }
+];
 
   // 3. Cybersecurity Achievements (Cyber Mode)
   const cyberAchievements = [
-    { title: "Google Certified", desc: "Earned the Google Cybersecurity Professional Certificate.", icon: <ShieldAlert />, tag: "Certified", date: "2024" },
-    { title: "Founder & Head, Cyber Security Club NITJ", desc: "Active member of the Cyber Security Club core team at NITJ.", icon: <Terminal />, tag: "Leadership", date: "2023-Present" },
-    { title: "RootBreach Manager", desc: "Organized and managed the flagship 'RootBreach' security event.", icon: <Zap />, tag: "Event", date: "2024" },
-    { title: "Cyber Simulation", desc: "Currently working on a sophisticated Cyber Attack Simulation platform.", icon: <ShieldAlert />, tag: "Research", date: "2024" },
-    { title: "Hands-on Security", desc: "Participated in various hands-on labs and security learning activities.", icon: <Terminal />, tag: "Hands-on", date: "2023" }
-  ];
+  {
+    title: "Google Cybersecurity Certified",
+    desc: "Earned the Google Cybersecurity Professional Certificate covering security operations, incident response, Linux, SQL, and network security.",
+    icon: <ShieldAlert />,
+    tag: "Certification",
+    date: "2025"
+  },
+  {
+    title: "RootBreach Organizer",
+    desc: "Organized RootBreach, a 24-hour national-level Capture The Flag event with 300+ participants, fostering collaboration, technical excellence, and cybersecurity awareness among students nationwide.",
+    icon: <Terminal />,
+    tag: "Event",
+    date: "2026"
+  },
+  {
+    title: "MoSTF 2026 Organizer",
+    desc: "Organized MoSTF 2026, a two-day national workshop on Mobile Security Threats and Forensics in collaboration with IIT Jammu, attended by 100+ participants from across the country.",
+    icon: <Zap />,
+    tag: "Workshop",
+    date: "2026"
+  }
+];
 
   // Logic: Combine General with Mode-specific data
   const displayAchievements = [...generalAchievements, ...(isCyber ? cyberAchievements : devAchievements)];
