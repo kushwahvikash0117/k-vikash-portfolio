@@ -49,7 +49,7 @@ export default function Resume({ theme }) {
         </div>
 
         <a
-          href={isCyber ? '/My_CyberSec_Resume.pdf' : '/My_SEP_Resume.pdf'}
+          href={isCyber ? '/K_Vikash.pdf' : '/Vikash_Kushwah.pdf'}
           download={isCyber ? 'Vikash_CyberSec_Resume.pdf' : 'Vikash_Dev_Resume.pdf'}
           className={`w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-bold transition-all shadow-lg no-underline
             ${isCyber ? 'bg-[#00ff41] text-black hover:bg-[#00cc33]' : 'bg-slate-800 text-white hover:bg-black'}`}
